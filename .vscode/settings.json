@@ -5,7 +5,8 @@
         "cmath": "cpp",
         "ostream": "cpp",
         "sstream": "cpp",
-        "regex": "cpp"
+        "regex": "cpp",
+        "complex": "cpp"
     },
     "cmake.configureOnOpen": false
 }
