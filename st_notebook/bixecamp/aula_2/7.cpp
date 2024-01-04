@@ -6,6 +6,10 @@
 // Using ASCII, for digits from 0 to 9, it is possible to convert them to int by simply subtracting
 // the char '0'. https://pt.stackoverflow.com/questions/3760/o-que-acontece-em-uma-convers%C3%A3o-de-um-char-para-um-int
 
+// char str[11];
+// scanf("%s", str); string without spaces
+// fgets(str, 11, stdin); n-1 char's
+
 #include <bits/stdc++.h>
 using namespace std;
 
