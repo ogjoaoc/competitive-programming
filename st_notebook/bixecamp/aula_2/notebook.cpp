@@ -61,8 +61,15 @@
 
 
 
+// Range-Based Loop
+// for ( range_declaration : range_expression ) 
+//     loop_statement
 
-
+// vector<int> v = { 0, 1, 2, 3, 4, 5 };
+//     for (auto i : v)
+//         cout << i << ' ';
+ 
+//     cout << '\n';
 
 
 
