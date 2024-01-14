@@ -1,5 +1,6 @@
-// Using sqrt(n) to improve complexity.
- 
+// Using sqrt(n) to improve complexity
+// uri 1221
+
 #include <bits/stdc++.h>
 #include <math.h>
 using namespace std;
