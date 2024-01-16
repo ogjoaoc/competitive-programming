@@ -53,12 +53,12 @@ Constant factor refers to the idea that different operations with the same
 complexity take slightly different amounts of time to run. For example, three
 addition operations take a bit longer than a single addition operation. Another
 example is that although binary search on an array and insertion into an ordered
-set are both $\mathcal{O}(\log n)$, binary search is noticeably faster.
+set are both O(log n), binary search is noticeably faster.
 
 Constant factor is entirely ignored in Big O notation. This is fine most of
 the time, but if the time limit is particularly tight, you may receive time
 limit exceeded (TLE) with the intended complexity. When this happens, it is
 important to keep the constant factor in mind. For example, a piece of code that
-iterates through all ordered triplets runs in $\mathcal{O}(n^3)$ time might be
+iterates through all ordered triplets runs in O(n^3) time might be
 sped up by a factor of $6$ if we only need to iterate through all unordered
 triplets.
