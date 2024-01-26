@@ -4,58 +4,43 @@ using namespace std;
 const int MAX = 10010;
 
 int main() {
-
-    int v[MAX];
-    int ans[MAX];
-    int n, cnt = 0, cnt_reverse = 0;
-    bool found_zero_reverse = false, found_zero = false;
-    cin >> n;
+    
+    int n; cin >> n;
+    int zeros = 0;
+    vector <string> v(n);
+    vector <int> pos0(n);
+    pos0.clear();
+    vector <int> ans(n);
 
     for (int i = 0; i < n; i++) {
         cin >> v[i];
-    }
-
-    for (int i = 0; i < n; i++) {
-        cnt = 0;
-        cnt_reverse = 0;
-        for (int j = i; j < n; j++) {
-            if (v[j] != 0 && v[i] != 0) {
-                cnt++;
-            }
-            else if (v[i] == 0) {
-                cnt = 0;
-            }
-            else if (v[j] == 0) {
-                found_zero = true;
-                break;
-            }
-        }
-
-        for (int j = i; j > -1; j--) {
-            if (v[j] != 0 && v[i] != 0) {
-                cnt_reverse++;
-            }
-            else if (v[i] == 0) {
-                cnt_reverse++;
-            }
-            else if (v[j] == 0) {
-                found_zero_reverse = true;
-                break;
-            }
-        }
-
-        if ((cnt < cnt_reverse) || (found_zero)) {
-            ans[i] = cnt;
-        }
-        else if ((cnt_reverse < cnt)) {
-            ans[i] = cnt_reverse;
+        if (v[i] == "0") {
+            zeros++;
+            pos0.push_back(i);
         }
     }
 
     for (int i = 0; i < n; i++) {
-        cout << ans[i] << " ";
+        string current = v[i];
+        if (current == "0") {
+            ans[i] = 0;
+        } else {
+            int pos_current = i;
+            int best = 1000000;
+            for (int j = 0; j < zeros; j++) {
+                // cout << pos0[j];
+                if (abs(pos0[j] - pos_current) < best) {
+                    best = abs(pos0[j] - pos_current);
+                }
+            }
+            if (best >= 9) ans[i] = 9;
+            else ans[i] = best;
+        }
     }
 
+    for (auto i : ans) {
+        cout << i << " ";
+    }
 
     return 0;
 }
