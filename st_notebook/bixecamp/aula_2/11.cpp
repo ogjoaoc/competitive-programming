@@ -7,9 +7,8 @@ int main() {
     
     int n; cin >> n;
     int zeros = 0;
-    vector <string> v(n);
-    vector <int> pos0(n);
-    pos0.clear();
+    vector <string> v(n); // v(n) with zeros
+    vector <int> pos0; // * empty vector
     vector <int> ans(n);
 
     for (int i = 0; i < n; i++) {
