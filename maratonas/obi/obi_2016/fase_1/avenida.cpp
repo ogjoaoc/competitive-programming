@@ -1,5 +1,3 @@
-// stack approach wa
-
 #include <bits/stdc++.h>
 
 using namespace std;
@@ -15,49 +13,31 @@ using namespace std;
 const int INF = 0x3f3f3f3f;
 const ll LINF = 0x3f3f3f3f3f3f3f3fLL;
 const int MOD = 998244353;
-const int MAX = 2e5+1;
+const int MAX = 1010;
 
+int M[MAX][MAX];
 
-void solve(){ 
-	
-	int l; cin >> l;
+void solve() { 
 
-	stack <char> p;
-	
-	bool f = true;
+    int n, m; cin >> n >> m;
 
-	while (l >= 0) {
-		
-	string s; 
-	getline(cin, s);
-	
-	for (auto c : s) {
+    for (int i = 0; i < n; i++) {
+        for (int j = 0; j < m; j++) {
+            cin >> M[i][j];
+        }
+    }
 
-		if (c == '{') {
-		       	
-			p.push(c);
-			f = true;
-		}
+    int ans = INT_MAX;
 
+    for (int j = 0; j < m; j++) {
+        int cont = 0;
+        for (int i = 0; i < n; i++) {
+            cont +=  M[i][j];
+        }
+        if (cont < ans) ans = cont;
+    }
 
-		if (c == '}' and !p.empty()) {
-		      
-			p.pop();
-
-		} else if (c == '}' and p.empty()) {
-			
-			f = false;
-
-		}
-	}
-
-
-	l--;
-
-	}
-
-	if (!f or p.size()>0) cout << "N\n";
-	else cout << "S\n";
+    cout << ans << "\n";    
 
 }
 
@@ -70,3 +50,5 @@ signed main() { _
  
     return 0;
 }
+
+   
