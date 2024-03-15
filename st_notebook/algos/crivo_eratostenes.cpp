@@ -6,9 +6,9 @@ int eh_composto[10000007]; // 1 (true) = composto
 
 void crivo(int x){
     eh_composto[1] = 1;
-    if(!eh_composto[x]) { // possivel primo
+    if(!eh_composto[x]) { 
         for(int i=2; i<=x; i++) {
-            if(!eh_composto[i]) { // sub-valor de x é um possível primo
+            if(!eh_composto[i]) { 
                 for(int j=2; j*i <= x; j++) {
                     eh_composto[i*j] = 1;
                 } 
