@@ -1,5 +1,5 @@
-// Breadth-first search
-// O(n+m)
+// Depth-first search
+// O(V+E)
 
 #include <bits/stdc++.h>
 using namespace std;
