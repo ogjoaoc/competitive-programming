@@ -21,6 +21,19 @@ const int MOD = 1e9+7;
 vector<int> grafo[MAXN];
 int vis[MAXN];
 
+void dfs(int u) {
+	
+	cout << u << ' ';
+	
+	for(auto vizinho : grafo[u]) {
+		if(!vis[vizinho]) {
+			vis[vizinho] = 1;
+			dfs(vizinho);
+		}
+	}
+	
+}
+
 int main() {_
 	
 	grafo[1].push_back(2);
@@ -31,31 +44,12 @@ int main() {_
 	grafo[3].push_back(2);
 	grafo[5].push_back(2);
 	
-	queue<int> q;
-	
-	q.push(1);
 	vis[1] = 1;
-						
-	while(!q.empty()) {
-		
-		int cara_atual = q.front();
-		q.pop();
-		
-		cout << cara_atual << ' ';
-		
-		for(auto vizinho : grafo[cara_atual]) {
-			if(!vis[vizinho]) {
-				vis[vizinho] = 1;
-				q.push(vizinho);
-			}
-		}
-		
-	}
-	
-	cout << "\n";
-	
-	// 1 2 4 3 5
+	dfs(1);
 			
 	return 0;	
 }
+
+
+
 
